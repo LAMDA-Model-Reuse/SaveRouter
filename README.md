@@ -38,18 +38,11 @@ the subsequent serving-time savings:
 
 ## Method
 
-```mermaid
-flowchart LR
-    A[Training queries] --> B[Query grouping]
-    B --> C[Adaptive fixed-K acquisition]
-    C --> D[Sparse quality and cost feedback]
-    D --> E[Group-model capability prior]
-    D --> F[Local evidence with shrinkage]
-    E --> F
-    F --> G[Query-level residual correction]
-    G --> H[Quality and cost estimates]
-    H --> I[Cost-aware routing]
-```
+<p align="center">
+  <img src="assets/method.png" alt="Overview of the SAVERouter method" width="100%">
+</p>
+
+<p align="center"><em>Overview of SAVERouter.</em></p>
 
 SAVERouter has three main stages:
 
@@ -101,16 +94,15 @@ After installation, the equivalent CLI command is:
 saverouter reproduce --benchmark all --device auto --verify
 ```
 
-The default `K=4` run produces the following reference values. Small numerical
-differences can occur across BLAS, CUDA, and encoder environments; `--verify`
-checks all metrics under the repository's declared tolerances.
+The paper's main comparison is shown below. Small numerical differences can
+occur across BLAS, CUDA, and encoder environments; `--verify` checks all
+metrics under the repository's declared tolerances.
 
-| Benchmark | Feedback | Max/Ps ↑ | CR ↓ | SA-BEP ↓ | SA-CR@1M ↓ |
-|---|---:|---:|---:|---:|---:|
-| LLMRouterBench | 33.33% | 0.633825 | 0.229377 | 5,246 | 0.233419 |
-| MixInstruct | 33.33% | 0.749790 | 0.935926 | 1,231,760 | 1.014850 |
-| MMR-Bench | 41.17% | 0.754098 | 0.776474 | 18,285 | 0.780561 |
-| RouterBench | 36.36% | 0.808408 | 0.681069 | 42,705 | 0.694689 |
+<p align="center">
+  <img src="assets/main_results.png" alt="Main results on four routing benchmarks" width="85%">
+</p>
+
+<p align="center"><em>Main results on four routing benchmarks.</em></p>
 
 The evaluator constructs the complete policy family used in the paper: 201
 cost-weight policies, cost-threshold policies, and incremental
