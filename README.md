@@ -1,5 +1,11 @@
 <div align="center">
 
+<a href="https://sinapis.ai/">
+  <img src="assets/sinapisai-lamda-header.svg" alt="SinapisAI × LAMDA — SAVERouter research collaboration" width="100%">
+</a>
+
+**A research collaboration between [SinapisAI](https://sinapis.ai/) and LAMDA.**
+
 # SAVERouter
 
 ### Routing Should Pay for Itself: Sparse Supervision for Economical LLM Routing
@@ -10,10 +16,11 @@
 
 **Guannan Lai · Gelin Bian · Hao-Xuan Ma · Jun-Peng Jiang · Long Chen · Jian-Dong Liu · Zhi-Hao Tan · Han-Jia Ye**
 
-Nanjing University · The Hong Kong University of Science and Technology · SinapisAI
+Nanjing University · The Hong Kong University of Science and Technology · [**SinapisAI**](https://sinapis.ai/)
 
 [[Paper](https://arxiv.org/abs/2609.37402)]
 [[Code](https://github.com/LAMDA-Model-Reuse/SaveRouter)]
+[[SinapisAI](https://sinapis.ai/)]
 
 </div>
 
