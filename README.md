@@ -20,7 +20,7 @@ Nanjing University · The Hong Kong University of Science and Technology · [**S
 
 [[Paper](https://arxiv.org/abs/2609.37402)]
 [[Code](https://github.com/LAMDA-Model-Reuse/SaveRouter)]
-[[SinapisAI · sinapis.ai](https://sinapis.ai/)]
+[[SinapisAI](https://sinapis.ai/)]
 
 </div>
 
