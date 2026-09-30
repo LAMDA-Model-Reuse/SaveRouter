@@ -1,0 +1,10 @@
+{
+  "benchmark": "LLMRouterBench",
+  "seed": 42,
+  "train_ratio": 0.2,
+  "k": 4,
+  "group_strategy": "auto",
+  "acquisition": {"beta": 0.35, "prior_strength": 10.0},
+  "estimator": {"prior_strength": 40.0, "prior_ridge_alpha": 10.0, "residual_ridge_alpha": 200.0, "gamma": 2.0},
+  "horizon": 1000000
+}

@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "saverouter"
+version = "0.1.0"
+description = "Sparse supervision acquisition and economical LLM routing"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {file = "LICENSE"}
+authors = [
+  {name = "Guannan Lai", email = "laign@lamda.nju.edu.cn"},
+  {name = "Gelin Bian"},
+  {name = "Hao-Xuan Ma"},
+  {name = "Jun-Peng Jiang"},
+  {name = "Long Chen"},
+  {name = "Jian-Dong Liu"},
+  {name = "Zhi-Hao Tan"},
+  {name = "Han-Jia Ye"},
+]
+dependencies = [
+  "numpy>=2.0,<2.4",
+  "scipy>=1.13,<1.17",
+  "scikit-learn>=1.5,<1.7",
+]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2609.37402"
+Repository = "https://github.com/LAMDA-Model-Reuse/SaveRouter"
+
+[project.optional-dependencies]
+benchmarks = [
+  "pandas>=2.2,<2.4",
+  "torch>=2.1,<3",
+  "torchvision>=0.16,<1",
+  "sentence-transformers>=2.6,<6",
+  "datasets>=2.20,<5",
+  "huggingface-hub>=0.24,<1",
+  "pillow>=10,<13",
+  "tqdm>=4.66,<5",
+  "requests>=2.31,<3",
+  "clip-anytorch>=2.6,<3",
+]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+saverouter = "saverouter.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["saverouter*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

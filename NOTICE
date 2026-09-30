@@ -1,0 +1,8 @@
+SAVERouter includes and adapts components from ORBIT (Optimal Routing and
+Budgeted Inference Toolbox), copyright 2026 LAMDA-ORBIT, distributed under the
+MIT License. The original project is available at:
+https://github.com/LAMDA-Model-Reuse/ORBIT
+
+Benchmark datasets and pretrained encoders are not redistributed. Their own
+licenses and terms apply; the download command retrieves them from the
+original publishers or their official Hugging Face repositories.

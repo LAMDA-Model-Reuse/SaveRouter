@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use SAVERouter, please cite the SAVERouter paper and ORBIT."
+title: "SAVERouter"
+type: software
+version: 0.1.0
+date-released: 2026-09-24
+license: MIT
+preferred-citation:
+  type: article
+  title: "Routing Should Pay for Itself: Sparse Supervision for Economical LLM Routing"
+  year: 2026
+  doi: "10.48550/arXiv.2609.37402"
+  url: "https://arxiv.org/abs/2609.37402"
+  authors:
+    - family-names: "Lai"
+      given-names: "Guannan"
+    - family-names: "Bian"
+      given-names: "Gelin"
+    - family-names: "Ma"
+      given-names: "Hao-Xuan"
+    - family-names: "Jiang"
+      given-names: "Jun-Peng"
+    - family-names: "Chen"
+      given-names: "Long"
+    - family-names: "Liu"
+      given-names: "Jian-Dong"
+    - family-names: "Tan"
+      given-names: "Zhi-Hao"
+    - family-names: "Ye"
+      given-names: "Han-Jia"
+references:
+  - type: article
+    title: "ORBIT: An Optimal Routing and Budgeted Inference Toolbox"
+    authors:
+      - family-names: "Lai"
+        given-names: "Guannan"
+      - family-names: "Hu"
+        given-names: "Haoran"
+      - family-names: "Ma"
+        given-names: "Hao-Xuan"
+      - family-names: "Ye"
+        given-names: "Han-Jia"
+    year: 2026
+    doi: "10.1007/s11704-026-61310-5"
