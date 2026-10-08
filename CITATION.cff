@@ -3,7 +3,7 @@ message: "If you use SAVERouter, please cite the SAVERouter paper and ORBIT."
 title: "SAVERouter"
 type: software
 version: 0.1.0
-date-released: 2026-09-24
+date-released: 2026-10-08
 license: MIT
 preferred-citation:
   type: article

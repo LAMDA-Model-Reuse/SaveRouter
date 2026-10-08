@@ -11,6 +11,8 @@
 ### Routing Should Pay for Itself: Sparse Supervision for Economical LLM Routing
 
 [![arXiv](https://img.shields.io/badge/arXiv-2609.37402-b31b1b.svg)](https://arxiv.org/abs/2609.37402)
+[![CI](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml/badge.svg)](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml)
+[![Release](https://img.shields.io/github/v/release/LAMDA-Model-Reuse/SaveRouter)](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
