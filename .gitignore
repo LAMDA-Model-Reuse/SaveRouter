@@ -9,3 +9,5 @@ __pycache__/
 .DS_Store
 build/
 dist/
+media/video/output/
+media/video/work/
