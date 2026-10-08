@@ -51,15 +51,6 @@ the subsequent serving-time savings:
 - **SA-CR:** the serving-cost ratio after amortizing supervision expenditure
   over a fixed deployment horizon.
 
-## Explainer videos
-
-- [English — 60 seconds](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-en.mp4)
-- [中文 — 58 秒](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-zh.mp4)
-- Subtitles: [English SRT](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-en.srt) · [中文字幕](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-zh.srt)
-
-The editable voiceover and reproducible renderer are under
-[`media/video/`](media/video/).
-
 ## Method
 
 <p align="center">
@@ -196,7 +187,6 @@ by deployment horizon `H`. The experiments use `H = 1,000,000`.
 ```text
 configs/paper/       frozen benchmark profiles
 examples/            custom and online-feedback examples
-media/video/         bilingual explainer scripts and renderer
 results/reference/   numerical reproduction references
 saverouter/           method, benchmark adapters, and CLI
 scripts/              setup and reproduction entry points

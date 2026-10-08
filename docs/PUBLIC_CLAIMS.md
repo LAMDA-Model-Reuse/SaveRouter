@@ -15,8 +15,6 @@ when the paper changes.
 - **PyPI:** <https://pypi.org/project/saverouter/>
 - **Project page:** <https://lamda-model-reuse.github.io/SaveRouter/>
 - **Colab:** <https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb>
-- **English video:** <https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-en.mp4>
-- **Chinese video:** <https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/v0.1.0/saverouter-explainer-zh.mp4>
 - **One-line description:** SAVERouter learns an economical LLM router from
   sparse query-model feedback while accounting for the upfront cost of
   acquiring that supervision.
