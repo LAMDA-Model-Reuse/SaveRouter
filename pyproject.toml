@@ -10,6 +10,23 @@ readme = "README.md"
 requires-python = ">=3.10"
 license = "MIT"
 license-files = ["LICENSE", "NOTICE"]
+keywords = [
+  "LLM routing",
+  "model routing",
+  "sparse supervision",
+  "cost optimization",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 authors = [
   {name = "Guannan Lai", email = "laign@lamda.nju.edu.cn"},
   {name = "Gelin Bian"},
@@ -27,8 +44,10 @@ dependencies = [
 ]
 
 [project.urls]
+Homepage = "https://lamda-model-reuse.github.io/SaveRouter/"
 Paper = "https://arxiv.org/abs/2609.37402"
 Repository = "https://github.com/LAMDA-Model-Reuse/SaveRouter"
+Issues = "https://github.com/LAMDA-Model-Reuse/SaveRouter/issues"
 
 [project.optional-dependencies]
 benchmarks = [

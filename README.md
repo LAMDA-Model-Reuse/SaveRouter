@@ -13,6 +13,8 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2609.37402-b31b1b.svg)](https://arxiv.org/abs/2609.37402)
 [![CI](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml/badge.svg)](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/LAMDA-Model-Reuse/SaveRouter)](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases)
+[![Project Page](https://img.shields.io/badge/Project-Page-8b7bf6.svg)](https://lamda-model-reuse.github.io/SaveRouter/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
@@ -22,6 +24,8 @@ Nanjing University · The Hong Kong University of Science and Technology · [**S
 
 [[Paper](https://arxiv.org/abs/2609.37402)]
 [[Code](https://github.com/LAMDA-Model-Reuse/SaveRouter)]
+[[Project Page](https://lamda-model-reuse.github.io/SaveRouter/)]
+[[Colab](https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb)]
 [[SinapisAI](https://sinapis.ai/)]
 
 </div>
@@ -177,6 +181,7 @@ examples/            custom and online-feedback examples
 results/reference/   numerical reproduction references
 saverouter/           method, benchmark adapters, and CLI
 scripts/              setup and reproduction entry points
+site/                 static project page and payback explorer
 tests/                unit and leakage-regression tests
 ```
 

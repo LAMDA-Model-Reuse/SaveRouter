@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SAVERouter — Routing Should Pay for Itself</title>
+  <meta name="description" content="SAVERouter learns economical LLM routing from sparse feedback and measures when the router repays its supervision cost.">
+  <meta name="theme-color" content="#11101b">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SAVERouter — Routing Should Pay for Itself">
+  <meta property="og:description" content="Sparse supervision for economical LLM routing: about 33–41% feedback and 1.9–9.5× earlier break-even across four benchmarks.">
+  <meta property="og:url" content="https://lamda-model-reuse.github.io/SaveRouter/">
+  <meta property="og:image" content="https://lamda-model-reuse.github.io/SaveRouter/assets/method.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://lamda-model-reuse.github.io/SaveRouter/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2311101b%22/><path d=%22M23 33h54M23 50h38M23 67h25%22 stroke=%22%23f4b860%22 stroke-width=%2210%22 stroke-linecap=%22round%22/></svg>">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="nav-wrap">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="SAVERouter home">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span>SAVERouter</span>
+      </a>
+      <div class="nav-links">
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#explorer">Explorer</a>
+      </div>
+      <a class="button button-small button-ghost" href="https://github.com/LAMDA-Model-Reuse/SaveRouter">GitHub <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="eyebrow"><span></span> Sparse supervision for economical LLM routing</div>
+      <h1>Routing should<br><em>pay for itself.</em></h1>
+      <p class="hero-copy">SAVERouter accounts for the feedback acquisition cost paid before deployment—and learns an effective router from only a sparse set of query-model outcomes.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="https://arxiv.org/abs/2609.37402">Read the paper <span aria-hidden="true">↗</span></a>
+        <a class="button button-ghost" href="https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb">Try in Colab <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="headline-stats" aria-label="Headline results">
+        <article>
+          <strong>33–41%</strong>
+          <span>of available training feedback used</span>
+        </article>
+        <article>
+          <strong>1.9–9.5×</strong>
+          <span>earlier break-even vs. the fastest conventional router</span>
+        </article>
+        <article>
+          <strong>4</strong>
+          <span>heterogeneous routing benchmarks</span>
+        </article>
+      </div>
+      <p class="scope-note">Results from the paper's main setting across four evaluated benchmarks.</p>
+    </section>
+
+    <section class="problem section shell">
+      <div class="section-label">01 / The missing cost</div>
+      <div class="split-heading">
+        <h2>A cheaper route can still be a bad investment.</h2>
+        <p>Conventional evaluations emphasize serving-time quality and cost. But training a router first requires model executions on historical queries. SAVERouter puts that upfront supervision expenditure into the objective and the evaluation.</p>
+      </div>
+      <div class="cost-flow" aria-label="Router cost lifecycle">
+        <div class="flow-card muted">
+          <span>Before deployment</span>
+          <strong>Acquire supervision</strong>
+          <small>Upfront expenditure C<sub>0</sub></small>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-card">
+          <span>After deployment</span>
+          <strong>Save per request</strong>
+          <small>Baseline C<sub>b</sub> − routed C<sub>r</sub></small>
+        </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
+        <div class="flow-card accent">
+          <span>The real question</span>
+          <strong>When does it pay back?</strong>
+          <small>Measured by SA-BEP and SA-CR</small>
+        </div>
+      </div>
+    </section>
+
+    <section id="method" class="section shell">
+      <div class="section-label">02 / Method</div>
+      <div class="split-heading">
+        <h2>Spend feedback where it teaches the router most.</h2>
+        <p>SAVERouter adaptively selects exactly <em>K</em> model outcomes per training query, shares capability evidence across related queries, then learns query-level residual corrections for fine-grained routing.</p>
+      </div>
+      <figure class="paper-figure">
+        <img src="assets/method.png" alt="The SAVERouter method: sparse feedback acquisition, hierarchical capability estimation, and query-level refinement" loading="lazy">
+        <figcaption>Method overview from the paper.</figcaption>
+      </figure>
+      <div class="method-grid">
+        <article><span>01</span><h3>Adaptive acquisition</h3><p>Grouped empirical-Bayes UCB chooses informative model outcomes under a fixed feedback budget.</p></article>
+        <article><span>02</span><h3>Capability sharing</h3><p>A structured group-model prior pools evidence across related queries without requiring dense labels.</p></article>
+        <article><span>03</span><h3>Local refinement</h3><p>Contextual residuals retain query-specific variation and construct a quality-cost routing frontier.</p></article>
+      </div>
+    </section>
+
+    <section id="results" class="section shell">
+      <div class="section-label">03 / Evidence</div>
+      <div class="split-heading">
+        <h2>Earlier payback without sacrificing routing quality.</h2>
+        <p>The paper evaluates SAVERouter on LLMRouterBench, Mixinstruct, MMR-Bench, and RouterBench. Lower CR, SA-BEP, and SA-CR are better; higher peak score is better.</p>
+      </div>
+      <figure class="paper-figure results-figure">
+        <img src="assets/main_results.png" alt="Main SAVERouter results across four routing benchmarks" loading="lazy">
+        <figcaption>Main results table from the paper.</figcaption>
+      </figure>
+    </section>
+
+    <section id="explorer" class="section explorer-section">
+      <div class="shell">
+        <div class="section-label">04 / Payback Explorer</div>
+        <div class="split-heading">
+          <h2>Estimate when your router pays back.</h2>
+          <p>Enter costs in any consistent unit. The calculator visualizes supervision-amortized break-even and total cost over deployment traffic.</p>
+        </div>
+        <div class="explorer-grid">
+          <form class="calculator" id="calculator">
+            <label>Upfront supervision cost <span>C<sub>0</sub></span><input id="upfront" type="number" min="0" step="100" value="5000"></label>
+            <label>Best single-model cost <span>C<sub>b</sub></span><input id="baseline" type="number" min="0.000001" step="0.01" value="1"></label>
+            <label>Routed serving cost <span>C<sub>r</sub></span><input id="routed" type="number" min="0" step="0.01" value="0.35"></label>
+            <label>Online router overhead <span>C<sub>o</sub></span><input id="overhead" type="number" min="0" step="0.001" value="0"></label>
+            <label>Deployment horizon <span>H</span><input id="horizon" type="number" min="1" step="10000" value="1000000"></label>
+            <p class="calculator-note" id="calculator-note">Illustrative calculator; paper results use benchmark-specific costs.</p>
+          </form>
+          <div class="chart-panel">
+            <div class="metric-row">
+              <article><span>SA-BEP</span><strong id="bep-value">7,693</strong><small>deployment queries</small></article>
+              <article><span>SA-CR@H</span><strong id="ratio-value">0.3550</strong><small id="ratio-caption">paid back by horizon</small></article>
+            </div>
+            <canvas id="payback-chart" width="960" height="420" role="img" aria-label="Cumulative baseline and routed system costs over deployment volume"></canvas>
+            <div class="chart-legend"><span class="baseline-key">Best single model</span><span class="router-key">Router + supervision</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section shell" id="try">
+      <div class="section-label">05 / Try and reproduce</div>
+      <div class="split-heading">
+        <h2>From thirty seconds to the full benchmark suite.</h2>
+        <p>Choose the path that matches your goal. The smoke test and tutorial require no benchmark downloads; the paper suite uses frozen profiles and pinned data revisions.</p>
+      </div>
+      <div class="try-grid">
+        <article>
+          <span>Quick check</span><h3>Smoke test</h3><pre><code>git clone https://github.com/LAMDA-Model-Reuse/SaveRouter.git
+cd SaveRouter
+bash scripts/setup.sh
+.venv/bin/saverouter smoke-test</code></pre>
+          <a href="https://github.com/LAMDA-Model-Reuse/SaveRouter#installation">Setup guide →</a>
+        </article>
+        <article class="featured">
+          <span>Interactive tutorial</span><h3>CPU Colab</h3><p>Generate a small structured routing problem, acquire sparse feedback, fit SAVERouter, and inspect payback metrics.</p>
+          <a class="button button-primary" href="https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb">Open notebook ↗</a>
+        </article>
+        <article>
+          <span>Paper results</span><h3>Full reproduction</h3><pre><code>bash scripts/reproduce.sh all</code></pre><p>Approximately 12–15 GB of free disk space; CUDA is recommended for MMR-Bench and first-time feature extraction.</p>
+          <a href="https://github.com/LAMDA-Model-Reuse/SaveRouter#reproducing-the-experiments">Reproduction guide →</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="citation-section">
+      <div class="shell citation-grid">
+        <div><div class="section-label">Citation</div><h2>Build routing systems that account for the bill before deployment.</h2></div>
+        <div class="citation-box">
+          <pre id="citation"><code>@article{lai2026routing,
+  title   = {Routing Should Pay for Itself: Sparse Supervision for Economical LLM Routing},
+  author  = {Lai, Guannan and Bian, Gelin and Ma, Hao-Xuan and Jiang, Jun-Peng and Chen, Long and Liu, Jian-Dong and Tan, Zhi-Hao and Ye, Han-Jia},
+  journal = {arXiv preprint arXiv:2609.37402},
+  year    = {2026}
+}</code></pre>
+          <button class="copy-button" id="copy-citation" type="button">Copy BibTeX</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer shell">
+    <span>SAVERouter · MIT License</span>
+    <div><a href="https://arxiv.org/abs/2609.37402">Paper</a><a href="https://github.com/LAMDA-Model-Reuse/SaveRouter">Code</a><a href="https://sinapis.ai/">SinapisAI</a></div>
+  </footer>
+</body>
+</html>
