@@ -13,6 +13,7 @@
 [![arXiv](https://img.shields.io/badge/arXiv-2609.37402-b31b1b.svg)](https://arxiv.org/abs/2609.37402)
 [![CI](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml/badge.svg)](https://github.com/LAMDA-Model-Reuse/SaveRouter/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/LAMDA-Model-Reuse/SaveRouter)](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases)
+[![PyPI](https://img.shields.io/pypi/v/saverouter.svg)](https://pypi.org/project/saverouter/)
 [![Project Page](https://img.shields.io/badge/Project-Page-8b7bf6.svg)](https://lamda-model-reuse.github.io/SaveRouter/)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB.svg)](https://www.python.org/)
@@ -24,6 +25,7 @@ Nanjing University · The Hong Kong University of Science and Technology · [**S
 
 [[Paper](https://arxiv.org/abs/2609.37402)]
 [[Code](https://github.com/LAMDA-Model-Reuse/SaveRouter)]
+[[PyPI](https://pypi.org/project/saverouter/)]
 [[Project Page](https://lamda-model-reuse.github.io/SaveRouter/)]
 [[Colab](https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb)]
 [[SinapisAI](https://sinapis.ai/)]
@@ -71,7 +73,15 @@ quality, cost)` tuples. Router fitting never receives a dense outcome matrix.
 
 ## Installation
 
-Clone the repository and create the environment:
+Install the core package and run the download-free smoke test:
+
+```bash
+python -m pip install saverouter
+saverouter smoke-test
+```
+
+For paper reproduction, clone the repository and create the complete benchmark
+environment:
 
 ```bash
 git clone https://github.com/LAMDA-Model-Reuse/SaveRouter.git
@@ -79,10 +89,9 @@ cd SaveRouter
 bash scripts/setup.sh
 ```
 
-Run the download-free smoke test and unit tests:
+Run the unit tests:
 
 ```bash
-.venv/bin/saverouter smoke-test
 .venv/bin/python -m pytest
 ```
 

@@ -12,6 +12,7 @@ when the paper changes.
   Economical LLM Routing*
 - **Paper:** <https://arxiv.org/abs/2609.37402>
 - **Repository:** <https://github.com/LAMDA-Model-Reuse/SaveRouter>
+- **PyPI:** <https://pypi.org/project/saverouter/>
 - **Project page:** <https://lamda-model-reuse.github.io/SaveRouter/>
 - **Colab:** <https://colab.research.google.com/github/LAMDA-Model-Reuse/SaveRouter/blob/main/examples/saverouter_colab.ipynb>
 - **One-line description:** SAVERouter learns an economical LLM router from
