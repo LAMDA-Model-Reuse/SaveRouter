@@ -10,6 +10,7 @@ permissions:
 jobs:
   distributions:
     name: Build and attach distributions
+    if: startsWith(github.event.release.tag_name, 'v')
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +21,22 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+      - name: Validate software release version
+        env:
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import tomllib
+          tag = os.environ['RELEASE_TAG']
+          if not re.fullmatch(r'v\d+\.\d+\.\d+(?:(?:a|b|rc)\d+|\.post\d+|\.dev\d+)?', tag):
+              raise ValueError('Not a software version tag: ' + tag)
+          with open('pyproject.toml', 'rb') as stream:
+              version = tomllib.load(stream)['project']['version']
+          if tag != 'v' + version:
+              raise ValueError('Release tag does not match pyproject.toml version')
+          PY
       - name: Install build tools
         run: python -m pip install build twine
       - name: Test and build
