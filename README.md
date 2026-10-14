@@ -32,6 +32,18 @@ Nanjing University · The Hong Kong University of Science and Technology · [**S
 
 </div>
 
+## Video overview
+
+Watch the motivation, method, and key results in 90 seconds. Each version has matching narration, on-screen text, and captions.
+
+<p align="center">
+  <a href="https://lamda-model-reuse.github.io/SaveRouter/#video"><img src="assets/saverouter-en-poster.png" width="85%" alt="Watch the SAVERouter paper video in English or Chinese"></a>
+</p>
+
+[Watch in English](https://lamda-model-reuse.github.io/SaveRouter/#video) ·
+[观看中文版](https://lamda-model-reuse.github.io/SaveRouter/?video=zh#video) ·
+[Download MP4s and subtitles](https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/tag/paper-videos-v1)
+
 ## Overview
 
 LLM routing can reduce serving cost, but training a router often requires

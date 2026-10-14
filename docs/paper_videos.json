@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "download_base": "https://github.com/LAMDA-Model-Reuse/SaveRouter/releases/download/paper-videos-v1",
+  "files": [
+    {
+      "name": "saverouter-en.mp4",
+      "sha256": "35327d09b2d769e17d0e0ba154bbbb8a10e7c2a1fce82f44350b727143cc48b9",
+      "bytes": 18538389
+    },
+    {
+      "name": "saverouter-en.srt",
+      "sha256": "0e72bd8f38a69198435afe1cafd044b70d70e67a21db847147cd6a049ecbef1b",
+      "bytes": 1450
+    },
+    {
+      "name": "saverouter-en.vtt",
+      "sha256": "01682caf2bd845b951b32a6b0839a5292fc1a432da2b3901312027fa27d117d6",
+      "bytes": 1332
+    },
+    {
+      "name": "saverouter-zh.mp4",
+      "sha256": "3f2fc42b3233c6d825791f5ca83816d102b1014f40feaf803345b75bde605675",
+      "bytes": 18519567
+    },
+    {
+      "name": "saverouter-zh.srt",
+      "sha256": "a926cd2d2f607336bf4d562d4c11c597011e8222192531de0f8b62088f21f309",
+      "bytes": 1799
+    },
+    {
+      "name": "saverouter-zh.vtt",
+      "sha256": "3dff42a9da1f8ee4f250617be4d9ef7aad735b656df665b2b9275e3b81a97be6",
+      "bytes": 1636
+    }
+  ]
+}

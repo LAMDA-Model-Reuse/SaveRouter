@@ -1,3 +1,14 @@
+.video-showcase { overflow: hidden; margin-top: 48px; border: 1px solid var(--rule, var(--line)); border-radius: 12px; background: #07111f; box-shadow: 0 20px 60px rgba(7,17,31,.12); }
+.video-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; color: rgba(255,255,255,.65); font-size: 12px; }
+.video-language-picker { display: flex; gap: 8px; }
+.video-language-picker button { padding: 9px 18px; border: 1px solid rgba(255,255,255,.22); border-radius: 5px; color: #fff; background: transparent; cursor: pointer; font: inherit; font-weight: 700; }
+.video-language-picker button[aria-pressed="true"] { border-color: var(--lime, var(--accent-bright)); color: #07111f; background: var(--lime, var(--accent-bright)); }
+.video-language-picker button:focus-visible, .video-downloads a:focus-visible { outline: 3px solid #41d6c3; outline-offset: 3px; }
+.video-showcase video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #07111f; }
+.video-downloads { display: flex; flex-wrap: wrap; gap: 22px; padding: 18px 20px; color: #fff; font-size: 13px; }
+.video-downloads a { text-decoration: underline; text-underline-offset: 4px; }
+.video-note { max-width: 850px; margin: 20px auto 0; color: var(--muted, #737b88); text-align: center; font-size: 12px; }
+
 :root {
   --ink: #171521;
   --muted: #686478;
